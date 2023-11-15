@@ -16,6 +16,7 @@ Lesões por pressão representam um significativo problema de saúde mundial, co
 
 Ao realizar a mudança da posição do paciente, ocorre uma descompressão dos vasos e retorno da circulação sanguínea, mantendo o tecido saudável e impedindo a abertura de lesões.
 
+
 ## Solução proposta:
 
 Após reflexões sobre o problema enfatizado acima, a solução foi batizada de CubitoCheck.
@@ -31,6 +32,7 @@ Além disso, como o dispositivo estará conectado a um ESP32, poderá ser conect
 Será cronometrado o tempo levado para a mudança de posição ser realizada desde o momento do acionamento do alerta, até sua desativação pela mudança de decúbito do paciente e a almofada. O intuito do cronometro é de agilizar o processo, aumentando as chances de manter o paciente saudável.
 
 Pensando num controle de monitoramento mais eficiente e visto que ocorrem casos de processos judiciais e indenizações por conta de pacientes que desenvolvem complicações, os dados sobre os alertas, como os horários em que o trabalho foi realizado e quem o fez, serão armazenados históricamente, gerando assim mais provas a favor da justiça.
+
 
 
 
