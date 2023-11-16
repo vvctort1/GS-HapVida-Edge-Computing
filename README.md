@@ -4,9 +4,9 @@
 
 ## Problema abordado:
 
-A mudança de decúbito é a troca de posição do paciente acamado ou restrito ao leito que estejam incapacitados de mudança de posição ativa. Segundo estudos, é necessário que seja feita pelo menos a cada 2 horas por profissionais da equipe de enfermagem, cuidadores ou familiares, afim de prevenir dificuldades futuras. O procedimento tem como objetivo:
+A mudança de decúbito é a troca de posição do paciente acamado ou restrito ao leito que está incapacitado de realizar a mudança de posição ativa. Segundo estudos, é necessário que seja feita pelo menos a cada 2 horas por profissionais da equipe de enfermagem, cuidadores ou familiares, a fim de prevenir dificuldades futuras. O procedimento tem como objetivo:
 
-- Evitar isquemia em áreas de compressão (previnindo a necrose tecidual, conhecida como úlcera por pressão)
+- Evitar isquemia em áreas de compressão (prevenindo a necrose tecidual, conhecida como úlcera por pressão)
 - Facilitar a expectoração de secreção traqueal e brônquica;
 - Impedir o aumento de secreção pulmonar.
 
