@@ -4,9 +4,9 @@
 
 ## Problema abordado:
 
-A mudança de decúbito é a troca de posição do paciente acamado ou restrito ao leito que estejam incapacitados de mudança de posição ativa. Segundo estudos, é necessário que seja feita pelo menos a cada 2 horas por profissionais da equipe de enfermagem, cuidadores ou familiares, afim de prevenir dificuldades futuras. O procedimento tem como objetivo:
+A mudança de decúbito é a troca de posição do paciente acamado ou restrito ao leito que está incapacitado de realizar a mudança de posição ativa. Segundo estudos, é necessário que seja feita pelo menos a cada 2 horas por profissionais da equipe de enfermagem, cuidadores ou familiares, a fim de prevenir dificuldades futuras. O procedimento tem como objetivo:
 
-- Evitar isquemia em áreas de compressão (previnindo a necrose tecidual, conhecida como úlcera por pressão)
+- Evitar isquemia em áreas de compressão (prevenindo a necrose tecidual, conhecida como úlcera por pressão)
 - Facilitar a expectoração de secreção traqueal e brônquica;
 - Impedir o aumento de secreção pulmonar.
 
@@ -15,6 +15,7 @@ As úlceras por pressão possuem 4 principais estágios, variando de um eritema 
 Lesões por pressão representam um significativo problema de saúde mundial, com altos custos hospitalares devido ao prolongamento do tempo de internação, aumento da morbimortalidade, acrescidos do impacto emocional e o sofrimento do paciente, estes percebidos como custos intangíveis, segundo a Scielo.
 
 Ao realizar a mudança da posição do paciente, ocorre uma descompressão dos vasos e retorno da circulação sanguínea, mantendo o tecido saudável e impedindo a abertura de lesões.
+
 
 ## Solução proposta:
 
@@ -31,6 +32,7 @@ Além disso, como o dispositivo estará conectado a um ESP32, poderá ser conect
 Será cronometrado o tempo levado para a mudança de posição ser realizada desde o momento do acionamento do alerta, até sua desativação pela mudança de decúbito do paciente e a almofada. O intuito do cronometro é de agilizar o processo, aumentando as chances de manter o paciente saudável.
 
 Pensando num controle de monitoramento mais eficiente e visto que ocorrem casos de processos judiciais e indenizações por conta de pacientes que desenvolvem complicações, os dados sobre os alertas, como os horários em que o trabalho foi realizado e quem o fez, serão armazenados históricamente, gerando assim mais provas a favor da justiça.
+
 
 
 
