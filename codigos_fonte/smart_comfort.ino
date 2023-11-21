@@ -6,14 +6,14 @@
 
  
 // Configurações de WiFi
-const char *SSID = "claudia13";
-const char *PASSWORD = "13291329";  // Substitua pelo sua senha
+const char *SSID = "Wokwi-GUEST";
+const char *PASSWORD = "";  // Substitua pelo sua senha
  
 // Configurações de MQTT
 const char *BROKER_MQTT = "46.17.108.113";
 const int BROKER_PORT = 1883;
-const char *ID_MQTT = "fiware_smartComfort9";
-const char *TOPIC_PUBLISH_ACEL = "/TEF/smartComfort9/attrs/a";
+const char *ID_MQTT = "fiware_smartComfort001";
+const char *TOPIC_PUBLISH_ACEL = "/TEF/smartcomfort001/attrs/a";
  
  
 // Configurações de Hardware
@@ -117,7 +117,18 @@ void setup() {
  
 void loop() {
 
-
+  checkWiFIAndMQTT();
+  if ((millis() - publishUpdate) >= PUBLISH_DELAY) {
+    publishUpdate = millis();
+    //sensor mpu6050
+    char msgBuffer2[4];
+    Serial.print("Posição: ");
+    Serial.println(acel_x);
+    dtostrf(acel_x, 4, 2, msgBuffer2);
+    MQTT.publish(TOPIC_PUBLISH_ACEL,msgBuffer2);
+    MQTT.loop();
+ 
+    }
 
   Wire.beginTransmission(endereco_MPU);
   Wire.write(0x3B);
@@ -159,7 +170,7 @@ void loop() {
     noTone(buzzerPin);
     contador = 0;
   } else {
-    // Verifica se o tempo sem mudanças é superior a 2 horas
+    // Verifica se o tempo sem mudanças é superior a 10seg (Para utilizar 2h: trocar o valor 10000 por 2 * 60 * 60 * 1000)
     if(tempo_atual - tempo_anterior > 10000) {
       Serial.print("Está na hora de mudar a posição do paciente");
       Serial.println();
@@ -170,28 +181,14 @@ void loop() {
       delay(1000);
     }
   }
-
+  
+  // Ajustes no valor enviado pelo sensor
   if (acel_x >= 3 && acel_x <= 4){
     acel_x = acel_x - 4;
 
   } else if (acel_x > 2 && acel_x <= 2.99) {
     acel_x = acel_x - 3;
   }
-
- 
-    checkWiFIAndMQTT();
-  if ((millis() - publishUpdate) >= PUBLISH_DELAY) {
-    publishUpdate = millis();
-    //sensor mpu6050
-    char msgBuffer2[7];
-    Serial.print("Posição: ");
-    Serial.println(acel_x);
-    dtostrf(acel_x, 4, 2, msgBuffer2);
-    MQTT.publish(TOPIC_PUBLISH_ACEL,msgBuffer2);
-    MQTT.loop();
- 
-    }
-
 
     delay(500);
 

@@ -19,11 +19,11 @@ Ao realizar a mudança da posição do paciente, ocorre uma descompressão dos v
 
 ## Solução proposta:
 
-Após reflexões sobre o problema enfatizado acima, a solução foi batizada de CubitoCheck.
+Após reflexões sobre o problema enfatizado acima, a solução foi batizada de SmartComfort.
 
-CubitoCheck consiste numa "almofada assistente". Desenvolvida anatomicamente pensando no conforto do paciente e sendo posicionada entre os joelhos.
+SmartComfort consiste numa "almofada assistente". Desenvolvida anatomicamente pensando no conforto do paciente e sendo posicionada entre os joelhos. Além de gerar um maior conforto ao paciente, ela atuará como um sistema de monitoramento da posição do paciente acamado com pouca ou nenhuma mobilidade ativa. Possuindo internamente um sensor MPU6050 (Acelerômetro/Giroscópio/Temperatura) cuja função é de monitorar a posição que o paciente permanece. Em conjunto com um buzzer, emitirá um alerta sonoro de 2 em 2 horas para a equipe de enfermagem, que será desarmado assim que a mudança da posição do paciente for realizada (juntamente com a almofada, que é onde o sensor está presente).
 
-Além de gerar um maior conforto ao paciente, ela atuará como um sistema de monitoramento da posição do paciente acamado com pouca ou nenhuma mobilidade ativa. Possuindo internamente um sensor MPU6050 (Acelerômetro/Giroscópio/Temperatura) cuja função é de monitorar a posição que o paciente permanece. Em conjunto com um buzzer, emitirá um alerta sonoro de 2 em 2 horas para a equipe de enfermagem, que será desarmado assim que a mudança da posição do paciente for realizada (juntamente com a almofada, que é onde o sensor está presente).
+<img src="./img/wokwi.png">
 
 ### Internet:
 
@@ -38,10 +38,28 @@ Pensando num controle de monitoramento mais eficiente e visto que ocorrem casos 
 
 ## Configuração e Execução:
 
-- O sensor MPU6050 do projeto atua de acordo com alteração do eixo X do acelerômetro, que mede a força da gravidade no eixo X;
+- Utililzar as conexões da imagem postada acima para replicação.
 
-- Assim que o dispositivo estiver ligado através de uma bateria, começará a funcionar e disparará o alerta sonoro a cada 2 horas (intervalo recomendado para efetuar a mudança de posição do paciente), encerrando o alerta quando o sensor MPU6050 identificar uma mudança significativa no eixo X. Podendo ser até no mínimo 0.6g, equivalente por exemplo, a mudar o paciente deitado do lado direito para a posição frontal (barriga para cima) ou vice versa.
+- Implementar o código .ino que se encontra na pasta codigos_fonte do repositório, escolhendo a rede wifi que deseja se conectar na internet.
 
+- No Postman: id - urn:ngsi-ld:smartComfort:001
+
+- Receber os dados na internet em tempo de execução através da porta 1026 (Orion Context Broker) ou dados históricos através da porta 8666 (STH-Comet).
+
+Observação: No código do protótipo, foi implementado o intervalo de tempo de 10 segundos para simular o intervalo de tempo de 2 horas da mudança de posição do paciente. 
+
+## Para a montagem do protótipo foi utilizado:
+
+- 1x ESP32;
+- 1x MPU6050;
+- 1x Buzzer;
+- Cabos jumpers;
+- 1x resistor 300 ohms;
+- 1x protoboard.
+
+
+
+Para acessar a simulação no Wokwi: <a href="https://wokwi.com/projects/381789432577941505">SmartComfort - Wokwi</a>
 
 
 
